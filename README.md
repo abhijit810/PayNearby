@@ -9,13 +9,14 @@
 ## Steps to recreate:-
 ### 1. Create a container repository:-
 ### build and push an image to this container repository with the below given commands:-
-cd PayNearby
 
-1. Docker build . -t Paynearby
+1. cd PayNearby
 
-2. docker tag paynearby container-repo-address
+2. Docker build . -t Paynearby
 
-3. docer push container-repo-address
+3. docker tag paynearby container-repo-address
+
+4. docer push container-repo-address
 
 ### 2. Cloud Functions:-
 
