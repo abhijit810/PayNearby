@@ -4,7 +4,7 @@
 ### There are 2 services that are being used for this pipeline.
 ### 1. CLoud Functions.
 ### 2. Cloud SQL - MySQL service.
-#### Given data is structured, So I have chosen an RDBMS database - MySQL.
+## Given data is structured, So I have chosen an RDBMS database - MySQL.
 
 ## Steps to recreate:-
 ### 1. Create a container repository:-
@@ -59,3 +59,7 @@ LATITUDE FLOAT,
 LONGITUDE FLOAT,
 ACCURACY INT
 );
+
+## Execution:-
+#### upload the given csv files into the storage bucket.
+#### The function triggers as soon as the file is uploaded to the configured bucket, the ingested file is deleted from the bucket once processed.
