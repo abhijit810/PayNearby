@@ -11,37 +11,38 @@
 ### build and push an image to this container repository with the below given commands:-
 cd PayNearby
 
-Docker build . -t Paynearby
+1. Docker build . -t Paynearby
 
-docker tag paynearby container-repo-address
+2. docker tag paynearby container-repo-address
 
-docer push container-repo-address
+3. docer push container-repo-address
 
 ### 2. Cloud Functions:-
 
-using Google Cloud to implement this, search for Cloud Functions in GCP console, 
+1. using Google Cloud to implement this, search for Cloud Functions in GCP console, 
 
-hit "create Function". 
+2. hit "create Function". 
 
-configure a storage bucket as trigger with object create as event.
+3. configure a storage bucket as trigger with object create as event.
 
-while creating, change the source to container repository and refer to the image pushed back in step 1.
+4. while creating, change the source to container repository and refer to the image pushed back in step 1.
 
-for configuring database credentials, there are 2 options.
+5. for configuring database credentials, there are 2 options.
 
-    1. refer to a secret manager.
+    a. refer to a secret manager.
 
-    2. or add the credentails as environment variables.
+    b. or add the credentails as environment variables.
  
-these are the variables that are required for this function to work:-
+6. Either way, We must configure these 4 environment variables for the cloud function.
+   these are the variables that are required for this function to work:-
 
-    DB_HOST  - database host IP address
+        a. DB_HOST  - database host IP address
 
-    DB_USER  - db user name
+        b. DB_USER  - db user name
 
-    DB_PASS  - db password
+        c. DB_PASS  - db password
 
-    DB_NAME  - PAYNEARBY
+        d. DB_NAME  - PAYNEARBY
 
 ### 3. Database:-
 
