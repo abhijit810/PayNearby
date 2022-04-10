@@ -47,7 +47,7 @@ def QA(cursorObject):
         for testcase in testcases:
             cursorObject.execute(testcase)
             cursorObject.fetchall()
-            number_of_rows = cur.rowcount
+            number_of_rows = cursorObject.rowcount
             if number_of_rows != 0:
                 raise ValueError("Could not update all records from staging to target, please check your ETL process")
     except Exception as e:
