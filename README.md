@@ -74,3 +74,8 @@ cd PayNearby
 ## Execution:-
 #### upload the given csv files into the storage bucket.
 #### The function triggers as soon as the file is uploaded to the configured bucket, the ingested file is deleted from the bucket once processed.
+
+
+## Result:-
+#### All the records from the ingested files will be inserted and can be found in the table "DIM_PINCODE".
+#### To vewrify that all the mentioned records are loaded successfully from the ingested file, there is a testcase in the pipeline.
