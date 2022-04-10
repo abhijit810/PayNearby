@@ -10,8 +10,11 @@
 ### 1. Create a container repository:-
 ### build and push an image to this container repository with the below given commands:-
 cd PayNearby
+
 Docker build . -t Paynearby
+
 docker tag paynearby container-repo-address
+
 docer push container-repo-address
 
 ### 2. Cloud Functions:-
