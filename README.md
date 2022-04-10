@@ -80,3 +80,4 @@
 ## Result:-
 #### All the records from the ingested files will be inserted and can be found in the table "DIM_PINCODE".
 #### To vewrify that all the mentioned records are loaded successfully from the ingested file, there is a testcase in the pipeline.
+#### To make sure that there are no repeated records, There is a primary key constraint in the target dimension table.
