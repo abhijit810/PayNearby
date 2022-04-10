@@ -64,27 +64,37 @@ def main(event, context):
             user =db_user,
             passwd =db_pass
         )
-
         bucket_name = event['bucket']
         file_name = event['name']
-
         engine = create_engine(f'mysql://{db_user}:{db_pass}@{db_name}/PAYNEARBY') # enter your password and database names here
+
+    except Exception as e:
+        raise ValueError('Error while connecting to the Database : ' + str(e))
+
+    try:
         df = pd.read_csv(f"gs://{bucket_name}/{file_name}",sep=",") # Replace Excel_file_name with your excel sheet name
         delete_file(bucket_name,file_name)
-        
         df.rename(columns={'key': 'ID', 'place_name': 'PLACE_NAME', 'admin_name1':'ADMIN_NAME','latitude':'LATITUDE','longitude':'LONGITUDE','accuracy':'ACCURACY'}, inplace=True)
         df.to_sql('STG_PINCODE',con=engine,index=False,if_exists='replace') # Replace Table_name with your sql table name
 
-        # preparing a cursor object
-        cursorObject = dataBase.cursor()
-
-        # using database
-        cursorObject.execute("use PAYNEARBY")
-
-        ETL(cursorObject)
-        QA(cursorObject)
-
-        dataBase.commit()
-        dataBase.close()
     except Exception as e:
-        raise ValueError(str(e))
+        raise ValueError('Error while processing the input file : ' + str(e))
+
+
+    # preparing a cursor object
+    cursorObject = dataBase.cursor()
+    # using database
+    cursorObject.execute("use PAYNEARBY")
+
+    try:
+        ETL(cursorObject)
+    except Exception as e:
+        raise ValueError(' Error while doing the ETL process '+ str(e))
+    
+    try:
+        QA(cursorObject)
+    except Exception as e:
+        raise ValueError(' Error while doing the QA process '+ str(e))
+    
+    dataBase.commit()
+    dataBase.close()
