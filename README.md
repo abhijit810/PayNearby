@@ -22,13 +22,38 @@ docer push container-repo-address
 #### for configuring database credentials, there are 2 options.
 ##### 1. refer to a secret manager.
 ##### 2. or add the credentails as environment variables.
-###### these are the variables that are required for this function to work:-
+ 
+these are the variables that are required for this function to work:-
+
 DB_HOST  - database host IP address
 
 DB_USER  - db user name
 
 DB_PASS  - db password
 
+DB_PASS  - PAYNEARBY
+
 ### 3. Database:-
 
-create a Database using the below name:-
+#### create a Database using the below name:-
+
+CREATE DATABASE PAYNEARBY;
+
+create table DIM_PINCODE(
+ID VARCHAR(20) primary key,
+PLACE_NAME VARCHAR(50),
+ADMIN_NAME VARCHAR(50),
+LATITUDE FLOAT,
+LONGITUDE FLOAT,
+ACCURACY INT,
+LOAD_DATE datetime
+);
+
+create table STG_PINCODE(
+ID VARCHAR(20),
+PLACE_NAME VARCHAR(50),
+ADMIN_NAME VARCHAR(50),
+LATITUDE FLOAT,
+LONGITUDE FLOAT,
+ACCURACY INT
+);
