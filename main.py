@@ -8,15 +8,10 @@ from google.cloud import storage
 
 def delete_file(bucket_name, blob_name):
     """Deletes a blob from the bucket."""
-    # bucket_name = "your-bucket-name"
-    # blob_name = "your-object-name"
-
     storage_client = storage.Client()
-
     bucket = storage_client.bucket(bucket_name)
     blob = bucket.blob(blob_name)
     blob.delete()
-
     print(f"file {blob_name} deleted.")
 
 def ETL(cursorObject):
@@ -59,9 +54,6 @@ def main(event, context):
     event (dict): Event payload.
     context (google.cloud.functions.Context): Metadata for the event.
     """
-    #     file = event
-    #     print(f"Processing file: {file['name']}.")
-
     try:
         db_user = os.environ["DB_USER"]
         db_pass = os.environ["DB_PASS"]
