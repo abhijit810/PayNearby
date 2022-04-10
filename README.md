@@ -39,6 +39,8 @@ DB_NAME  - PAYNEARBY
 
 CREATE DATABASE PAYNEARBY;
 
+#### create the required tables:-
+
 create table DIM_PINCODE(
 ID VARCHAR(20) primary key,
 PLACE_NAME VARCHAR(50),
