@@ -31,7 +31,7 @@ DB_USER  - db user name
 
 DB_PASS  - db password
 
-DB_PASS  - PAYNEARBY
+DB_NAME  - PAYNEARBY
 
 ### 3. Database:-
 
