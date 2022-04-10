@@ -36,13 +36,13 @@ cd PayNearby
 6. Either way, We must configure these 4 environment variables for the cloud function.
    these are the variables that are required for this function to work:-
 
-        a. DB_HOST  - database host IP address
+        DB_HOST  - database host IP address
 
-        b. DB_USER  - db user name
+        DB_USER  - db user name
 
-        c. DB_PASS  - db password
+        DB_PASS  - db password
 
-        d. DB_NAME  - PAYNEARBY
+        DB_NAME  - PAYNEARBY
 
 ### 3. Database:-
 
