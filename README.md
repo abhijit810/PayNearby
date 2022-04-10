@@ -1,7 +1,5 @@
 # PayNearby - part 1 - Documentation.
 
-##### I am using Google Cloud Platform to design the entire ETL pipeline.
-
 ### Cloud provider:- Google Cloud Platform
 ### Cloud services:- CLoud Functions, Cloud SQL - MySQL service.
 ### Programming tools:- Python 3.7, SQL
