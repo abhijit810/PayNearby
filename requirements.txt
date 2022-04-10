@@ -1,0 +1,8 @@
+# Function dependencies, for example:
+# package>=version
+setuptools
+mysqlclient
+mysql-connector-python
+pandas
+sqlalchemy
+gcsfs
