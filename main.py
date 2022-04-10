@@ -55,18 +55,19 @@ def main(event, context):
     context (google.cloud.functions.Context): Metadata for the event.
     """
     try:
+        db_host = os.environ["DB_HOST"]
         db_user = os.environ["DB_USER"]
         db_pass = os.environ["DB_PASS"]
         db_name = os.environ["DB_NAME"]
 
         dataBase = mysql.connector.connect(
-            host =db_name,
+            host =db_host,
             user =db_user,
             passwd =db_pass
         )
         bucket_name = event['bucket']
         file_name = event['name']
-        engine = create_engine(f'mysql://{db_user}:{db_pass}@{db_name}/PAYNEARBY') # enter your password and database names here
+        engine = create_engine(f'mysql://{db_user}:{db_pass}@{db_host}/{db_name}') # enter your password and database names here
 
     except Exception as e:
         raise ValueError('Error while connecting to the Database : ' + str(e))
@@ -84,7 +85,7 @@ def main(event, context):
     # preparing a cursor object
     cursorObject = dataBase.cursor()
     # using database
-    cursorObject.execute("use PAYNEARBY")
+    cursorObject.execute(f"use {db_name}")
 
     try:
         ETL(cursorObject)
