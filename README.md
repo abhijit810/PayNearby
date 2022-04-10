@@ -1,10 +1,16 @@
 # PayNearby - part 1 - Documentation.
 
-## I am using Google Cloud Platform to design the entire ETL pipeline.
-### There are 2 services that are being used for this pipeline.
+##### I am using Google Cloud Platform to design the entire ETL pipeline.
+### There are 2 Google cloud services that are being used for this pipeline.
 ### 1. CLoud Functions.
 ### 2. Cloud SQL - MySQL service.
-## Given data is structured, So I have chosen an RDBMS database - MySQL.
+
+### Programming tools
+#### Python 3.7
+#### SQL
+
+### database - MySQL
+#### Given data is structured, I have chosen an RDBMS database - MySQL.
 
 ## Steps to recreate:-
 ### 1. Create a container repository:-
