@@ -24,7 +24,9 @@ docer push container-repo-address
 ##### 2. or add the credentails as environment variables.
 ###### these are the variables that are required for this function to work:-
 DB_HOST  - database host IP address
+
 DB_USER  - db user name
+
 DB_PASS  - db password
 
 ### 3. Database:-
