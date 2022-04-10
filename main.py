@@ -38,8 +38,6 @@ def ETL(cursorObject):
             cursorObject.execute(statement)
     except Exception as e:
         raise ValueError(str(e))
-    
-    dataBase.commit()
 
 def QA(cursorObject):
     try:
@@ -92,6 +90,10 @@ def main(event, context):
         # using database
         cursorObject.execute("use PAYNEARBY")
 
+        ETL(cursorObject)
+        QA(cursorObject)
+
+        dataBase.commit()
         dataBase.close()
     except Exception as e:
         raise ValueError(str(e))
