@@ -43,7 +43,6 @@ def QA(cursorObject):
     try:
         testcases = [
                     'select * from STG_PINCODE stg where not exists (select * from DIM_PINCODE dim where dim.ID = stg.ID)',
-                    ''
                     ]
         for testcase in testcases:
             cursorObject.execute(testcase)
