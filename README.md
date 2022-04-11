@@ -10,7 +10,7 @@
 ### 1. Create a container repository:-
 ### build and push an image to this container repository with the below given commands:-
 
-1. cd PayNearby
+1. cd PayNearby-part-one
 
 2. Docker build . -t Paynearby
 
