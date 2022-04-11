@@ -14,7 +14,7 @@
 
 2. Docker build . -t Paynearby
 
-3. docker tag paynearby <container-repo-address>
+3. docker tag paynearby "container-repo-address"
 
 4. docer push container-repo-address
 
